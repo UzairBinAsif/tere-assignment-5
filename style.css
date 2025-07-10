@@ -26,7 +26,7 @@ header {
     background-color: #FFFFFF;
 }
 
-.hamburger {
+.hamburger, #check {
     display: none;
 }
 
@@ -88,7 +88,7 @@ header {
     color: #9E9DA2;
     padding-top: 27px;
     font-weight: 500;
-    font-style: Medium;
+    font-style: normal;
     font-size: 24px;
     line-height: 28px;
 }
@@ -120,6 +120,13 @@ header {
 
 .container-1 > :last-child {
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-1 > :last-child > img {
+    max-width: 100%;
 }
 
 .hor-bar {
@@ -214,7 +221,7 @@ input::placeholder {
 
 .works > :last-child > p {
     font-weight: 500;
-    font-style: Medium;
+    font-style: normal;
     font-size: 23px;
     line-height: 26px;
     text-align: center;
@@ -263,7 +270,7 @@ input::placeholder {
 
 .text-group-1 > div > p, .text-group-2 > div > p {
     font-weight: 500;
-    font-style: Medium;
+    font-style: normal;
     font-size: 20px;
     line-height: 26px;
     color: #9E9DA2;
@@ -338,7 +345,7 @@ input::placeholder {
 .card-heading > h1 {
     color: #75BF7A;
     font-weight: 500;
-    font-style: Medium;
+    font-style: normal;
     font-size: 88px;
     line-height: 118.8px;
 }
@@ -384,7 +391,7 @@ input::placeholder {
 .card-content > p {
     color: #9E9DA2;
     font-weight: 500;
-    font-style: Medium;
+    font-style: normal;
     font-size: 22px;
     line-height: 23px;
 }
@@ -392,9 +399,10 @@ input::placeholder {
 .footer-container {
     display: flex;
     justify-content: space-between;
+    padding: 38px 0px;
 }
 
-.footer-container > button {
+.footer-container > div > button {
     background-color: #000000;
     width: 178px;
     height: 45px;
@@ -405,7 +413,7 @@ input::placeholder {
     align-items: center;
 }
 
-.footer-container > button > a {
+.footer-container > div > button > a {
     font-weight: bolder;
     line-height: 0px;
     text-decoration: none;
@@ -440,6 +448,16 @@ input::placeholder {
     margin: 0 auto;
 }
 
+.footer-container > :last-child {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+footer {
+    background-color: #FFFFFF;
+}
+
 footer > p {
     color: #75BF7A;
     font-weight: 400;
@@ -457,11 +475,66 @@ footer > p {
     .text-group {
         bottom: 39.8vw;
     }
+
+    .container-1 > :first-child {
+        width: 50%;
+    }
+
+    .container-1 > :last-child {
+        width: 40%;
+    }
 }
 
-/* @media (max-width: 1400px) {
+@media (max-width: 1400px) {
     
-} */
+}
+
+@media (max-width: 1366px) {
+    .container-1 {
+        flex-direction: column;
+    }
+
+    .container-1 > :first-child {
+        width: 88%;
+    }
+
+    .container-1 > :last-child {
+        width: 100%;
+        padding-top: 100px;
+    }
+
+    .card-heading > h2 {
+        font-size: 31px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hor-bar > :last-child > button {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .hor-bar > :first-child > p {
+        font-size: 22px;
+    }
+
+    .card-content {
+        width: 47%;
+    }
+
+    .card-heading > h1 {
+        font-size: 80px;
+    }
+
+    .container-1 > :first-child > h1 {
+        font-size: 50px;
+    }
+
+    .footer-container > :last-child {
+        flex-direction: column;
+        gap: 0px;
+    }
+}
 
 @media (max-width: 1080px) {
     .text-group {
@@ -477,9 +550,115 @@ footer > p {
     .text-group-1 > div, .text-group-2 > div {
         place-items: center !important;
     }
-
+    
     .text-group-1 > div > p, .text-group-2 > div > p {
         text-align: center !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-1 {
+        flex-direction: column-reverse;
+        padding-top: 25px;
+    }
+
+    .container-1 > :last-child {
+        padding-top: 0px;
+    }
+
+    .container-1 > :first-child {
+        padding-top: 35px;
+    }
+
+    .nav-links > ul > li {
+        margin-top: 40px;
+    }
+
+    .nav-links > ul, .nav-links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 99;
+        transition: all 0.2s ease-in-out;
+        background-color: #FFFFFF;
+    }
+
+    #check:checked ~ .nav-links > ul {
+        right: 0;
+    }
+    
+    .hamburger {
+        display: block;
+        z-index: 100;
+    }
+    
+    .hamburger > img {
+        width: 40px;
+    }
+
+    .nav-links > ul > li > a {
+        font-size: 40px;
+    }
+
+    .hor-bar > :first-child > p {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .hor-bar > :last-child > input {
+        width: 28vw;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .hor-bar > :last-child > button {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .container-1 > :first-child > h1, .container-1 > :first-child > p {
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card-content {
+        width: 48%;
+    }
+    
+    .card-heading > h1 {
+        font-size: 64px;
+    }
+
+    .card-content > p {
+        font-size: 16.19px;
+    }
+
+    header {
+        background-color: #F9F9F9;
+    }
+
+    nav > img {
+        height: 40px;
+    }
+
+    .footer-container > :nth-child(3) {
+        display: none;
+    }
+
+    footer {
+        background-color: #F9F9F9;
+    }
+
+    footer > p {
+        color: #9E9DA2;
     }
 }
 
@@ -491,7 +670,7 @@ footer > p {
     .text-group-1, .text-group-2 {
         flex-direction: column;
     }
-
+    
     .text-group {
         align-items: center;
     }
@@ -500,8 +679,213 @@ footer > p {
         width: 100%;
         height: 290px;
     }
-
+    
     .text-group-1 , .text-group-2 {
         width: 290px !important;
+    }
+
+    .container-2 {
+        padding: 100px 0px;
+    }
+
+    .container-3 {
+        padding-bottom: 100px;
+    }
+
+    .container-1 {
+        padding-top: 0px;
+    }
+    
+    .container-1 > :first-child > div {
+        gap: 20px;
+    }
+    
+    .container-1 > :first-child > div > button {
+        width: 70%;
+        height: 48px;
+        place-self: center;
+    }
+    
+    .container-1 > :first-child > div > button > a {
+        font-size: 14.31px;
+    }
+
+    .hor-bar {
+        flex-direction: column;
+        height: fit-content !important;
+        padding: 22px 20px 30px 20px;
+    }
+
+    .hor-bar > div {
+        width: 100%;
+    }
+
+    .hor-bar > :first-child {
+        width: 90%;
+        text-align: center;
+    }
+
+    .hor-bar > :first-child > p {
+        font-size: 24.6px;
+        font-weight: 760;
+    }
+
+    .hor-bar > :last-child {
+        place-items: center;
+    }
+
+    .hor-bar > :last-child > input {
+        max-width: 100%;
+        width: 90%;
+        margin: 20px 0px 20px 0px;
+        height: 48px;
+    }
+    
+    .hor-bar > :last-child > button {
+        max-width: 100%;
+        width: 81vw;
+        height: 48px;
+    }
+
+    .card-heading > h2 {
+        font-size: 25px;
+    }
+
+    .card {
+        flex-direction: column !important;
+        height: fit-content;
+        width: 70vw;
+        padding: 50px 0px;
+        place-self: center !important;
+    }
+    
+    #card-2 {
+        place-self: center;
+    }
+
+    .card-content {
+        width: 80% !important;
+    }
+
+    .card-content > p {
+        text-align: center;
+    }
+
+    .works > :first-child > h1, .benefits > h1 {
+        font-size: 36px;
+    }
+    
+    .works > :last-child > p {
+        font-size: 18px;
+    }
+
+    .hor-bar > :last-child > button {
+        font-size: 18px;
+    }
+
+    .container-1 > :first-child > div > button > a {
+        font-size: 18px;
+    }
+
+    .container-1 > :first-child > h1 {
+        font-weight: bolder;
+        font-size: 34.89px;
+        line-height: 37.87px;
+    }
+
+    nav > img {
+        height: 33px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .footer-container > :first-child {
+        width:  131px;
+    }
+
+    .footer-container > :nth-child(2) {
+        order: 2;
+    }
+
+    .footer-container > :last-child {
+        order: 1;
+    }
+
+    .footer-container > div {
+        text-align: center;
+    }
+}
+
+@media (max-width: 526px) {
+    .hamburger > img {
+        width: 29px;
+    }
+    
+    .text-group-1 > :first-child, .text-group-1 > :last-child {
+        max-width: 390px;
+    }
+    
+    .text-group-1 , .text-group-2 {
+        max-width: 390px !important;
+    }
+
+    
+    .card-content {
+        width: 90% !important;
+    }
+
+    .works > :first-child > h1, .benefits > h1 {
+        font-size: 24px;
+    }
+
+    .hor-bar > :last-child {
+        flex-direction: column;
+    }
+
+    .container-2 {
+        padding-top: 50px;
+        padding-bottom: 0px;
+    }
+
+    .container-3 {
+        padding-bottom: 50px;
+    }
+
+    .container-1 > :first-child > div > button > a {
+        font-size: 14px;
+    }
+
+    .container-1 > :first-child > p {
+        font-size: 18px;
+    }
+
+    nav > img {
+        height: 26px;
+    }
+
+    .container-1 > :first-child > div > button {
+        width: 150px;
+        height: 38px;
+        place-self: center;
+    }
+    
+    .container-1 > :first-child > div > button > a {
+        font-size: 14.31px;
+    }
+
+    .container-1 > :first-child > div > button > img {
+        width: 23px;
+    }
+
+    .container-1 > :first-child > div {
+        padding-top: 30px !important;
+    }
+
+    .container-1 > :first-child {
+        width: 95%;
     }
 }
