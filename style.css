@@ -39,6 +39,11 @@ header {
     text-decoration: none;
     color: #000000;
     place-items: center;
+    transition: all 0.15s ease-in-out;
+}
+
+.nav-links > ul > li > a:hover {
+    color: #75BF7A;
 }
 
 .nav-links > ul {
@@ -62,6 +67,16 @@ header {
     font-weight: bold;
     font-size: 22px;
     line-height: 100%;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-links > button:hover {
+    background-color: #a5d3a8;
+}
+
+.nav-links > button:active {
+    background-color: #bfd2c0;
 }
 
 .container-1 {
@@ -108,6 +123,16 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.container-1 > :first-child > div > button:hover {
+    background-color: #3e3e3e;
+}
+
+.container-1 > :first-child > div > button:active {
+    background-color: #5c5c5c;
 }
 
 .container-1 > :first-child > div > button > a {
@@ -184,6 +209,16 @@ input::placeholder {
     color: #FFFFFF;
     font-weight: bolder;
     font-size: 22px;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.hor-bar > :last-child > button:hover {
+    background-color: #3e3e3e;
+}
+
+.hor-bar > :last-child > button:active {
+    background-color: #5c5c5c;
 }
 
 .container-2, .container-3 {
@@ -411,6 +446,16 @@ input::placeholder {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.footer-container > div > button:hover {
+    background-color: #3e3e3e;
+}
+
+.footer-container > div > button:active {
+    background-color: #5c5c5c;
 }
 
 .footer-container > div > button > a {
