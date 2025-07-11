@@ -26,7 +26,7 @@ header {
     background-color: #FFFFFF;
 }
 
-.hamburger, #check {
+.hamburger, .close, #check {
     display: none;
 }
 
@@ -588,13 +588,34 @@ footer > p {
         background-color: #FFFFFF;
     }
 
+    .nav-links > button {
+        display: none;
+    }
+    
     #check:checked ~ .nav-links > ul {
         right: 0;
+    }
+
+    #check:checked ~ .close {
+        right: 0;
+    }
+
+    #check:checked ~ .hamburger {
+        z-index: 10;
     }
     
     .hamburger {
         display: block;
         z-index: 100;
+    }
+
+    .close {
+        display: block;
+        position: fixed;
+        right: -100px;
+        top: 0;
+        margin: 5vw 7.5vw 0vw 0vw;
+        z-index: 105;
     }
     
     .hamburger > img {
@@ -602,7 +623,7 @@ footer > p {
     }
 
     .nav-links > ul > li > a {
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .hor-bar > :first-child > p {
@@ -818,6 +839,14 @@ footer > p {
     .footer-container > div {
         text-align: center;
     }
+
+    .nav-links > ul > li > a {
+        font-size: 30px;
+    }
+
+    .close {
+        margin-top: 6vw;
+    }
 }
 
 @media (max-width: 526px) {
@@ -887,5 +916,13 @@ footer > p {
 
     .container-1 > :first-child {
         width: 95%;
+    }
+
+    .nav-links > ul > li > a {
+        font-size: 20px;
+    }
+
+    .close {
+        margin-top: 10vw;
     }
 }
